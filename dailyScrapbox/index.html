@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Scrapbox</title>
+</head>
+
+<body>
+    Daily Scrapbox
+</body>
+<script>
+    location.href = getDailyScrapboxUri()
+
+    function getDailyScrapboxUri() {
+        const today = formatDate(new Date())
+        return `https://scrapbox.io/tanabelab/${today}`
+    }
+    function formatDate(dt) {
+        const year = dt.getFullYear();
+        const month = ('00' + (dt.getMonth() + 1)).slice(-2);
+        const day = ('00' + dt.getDate()).slice(-2);
+        return `${year}-${month}-${day}`
+    }
+</script>
+</html>
